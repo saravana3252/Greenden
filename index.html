@@ -15,6 +15,15 @@ https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/base.min.css
       mobileMenu.classList.toggle("translate-x-full");           
   }
 
+  function popUp(){
+    let popUpData=document.getElementById("popUp");
+    popUpData.style.display="flex";
+  }
+  function closePopUp(){
+    let popUpData=document.getElementById("popUp");
+    popUpData.style.display="none";
+  }
+
 
 </script>
 
@@ -34,13 +43,23 @@ https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/base.min.css
        </div>
 
           
-       <div id="mobile-div" class="h-svh w-2/5 flex flex-col items-center gap-3.5 fixed top-20 right-0 z-30 bg-orange-500 bg-opacity-80 transform translate-x-full transition-transform duration-500 ease-in-out p-4 lg:hidden" >
+       <div id="mobile-div" class="h-svh w-2/5 flex flex-col items-center gap-3.5 fixed top-20 right-0 z-30 bg-orange-500 bg-opacity-95 transform translate-x-full transition-transform duration-500 ease-in-out p-4 lg:hidden" >
         <a href="index.html" class=" p-2 w-20 text-center rounded-md text-white border border-white transition  duration-500  hover:text-white hover:bg-green-800">Home</a>
         <a href="third.html" class=" p-2 w-20 text-center rounded-md text-white transition duration-500   hover:text-white hover:bg-green-800 ">Products</a>
         <a href="second.html" class=" p-2 w-20 text-center rounded-md text-white  transition duration-500  hover:text-white hover:bg-green-800">Contact</a>
     </div>
    </div>
-
+   <!-- pop up -->
+    <div id="popUp" class="hidden">
+    <div  class=" bg-black bg-opacity-50 h-svh w-full fixed top-0 flex justify-center items-center" >
+      <div class="bg-black w-10/12 md:w-1/2">
+        <button onclick="closePopUp()" class=" bg-red-600 p-3 m-2 text-white rounded-full relative right-0">close</button>
+        <video controls>
+          <source src="./videos/video.mp4">
+        </video>
+      </div>
+    </div>
+  </div>
 
 
        <!-- header section -->
@@ -50,7 +69,7 @@ https://cdn.jsdelivr.net/npm/tailwindcss@3.4.14/base.min.css
             <h2 class="mb-2 font-bold text-2xl mt-6">We offer you a wide range of <span class="text-orange-500"> Artificial</span> and <span class="text-orange-500">Natural</span> Flowers</h2>
            <p class="mb-2">Plants for your Interior</p>
            <button class="border border-orange-500 bg-orange-500 text-white p-2 mb-2">Shop name</button>
-           <button class="border border-orange-500 p-2 text-white transition duration-500 hover:bg-black focus:outline-none">Watch Video</button>
+           <button onclick="popUp()" class="border border-orange-500 p-2 text-white transition duration-500 hover:bg-black focus:outline-none">Watch Video</button>
           <p>160+ Plants Species | 100+ Clients</p>
         </div>
         <div class="hidden md:flex p-4 border border-orange-400 bg-orange-500 m-6"><img src="./images/pot1.png" class="h-52"></div>
